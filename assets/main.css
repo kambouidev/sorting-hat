@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+.my-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.fade-leave-to,
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-leave-from,
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+
+.scrollbar-style {
+  scrollbar-width: none;
+  scrollbar-color: #6b7280 #d1d5db;
+}
+
+.scrollbar-style::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+  background-color: #6b7280;
+  border-radius: 4px;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb:hover {
+  background-color: #4b5563; /* Color de la manija cuando se pasa el mouse por encima */
+}
