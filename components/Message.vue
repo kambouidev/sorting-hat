@@ -1,33 +1,3 @@
-<script>
-  export default {
-    props: {
-      text: { type: String, default: '' },
-      sender: { type: Boolean, default: false },
-      input: { type: Boolean, default: false },
-      answers: { type: Array, default: [] },
-      answerClickMethod: Function,
-      reloadMethod: Function,
-    },
-    data() {
-      return {
-        photoUrl: 'sorting-hat.png',
-        answered: false,
-        inputText: ''
-      }
-    },
-    computed: {
-      buttonClass() {
-        return this.inputText.length < 3 ? 'hover:bg-red-600' : 'hover:bg-blue-600';
-      }
-    },
-    methods: {
-      handleAnswerClick(item) {
-        this.answered = true;
-        this.answerClickMethod(item);
-      },
-    }
-  }
-</script>
 <template>
   <Transition name="fade">
     <div class="flex mb-2 w-full" :class="sender ? 'justify-end' : ''">
@@ -59,14 +29,14 @@
           </button>
         </div>
       </Transition>
-      <Transition name="fade">
+      <Transition name="slide-fade" mode="out-in">
         <div v-if="answers.length > 0 && !sender && !answered">
           <h3 class="p-2 text-black text-opacity-50 text-xs sm:text-base">choose one:</h3>
             <div class="w-full flex flex-row flex-wrap">
               <button
                 v-for="(item, index) in answers"
                 :key="index"
-                class="flex-1 min-w-[50%] max-w-full p-1 " 
+                class="flex-1 min-w-[50%] max-w-full p-1 "
                 @click="handleAnswerClick(item)"
               >
               <div class="hover:bg-blue-600 bg-gray-600 text-white p-2 rounded-2xl break-words text-center h-full flex items-center justify-center text-xs sm:text-base">
@@ -89,3 +59,37 @@
   </div>
   </Transition>
 </template>
+<script>
+  export default {
+    props: {
+      text: { type: String, default: '' }, // Principal text to be displayed
+      sender: { type: Boolean, default: false }, // Indicates if the message sender is the user
+      input: { type: Boolean, default: false }, // Indicates if an input field is displayed
+      answers: { type: Array, default: [] }, // Array of answer options.
+      answerClickMethod: Function, // function to handle answer option clicks
+      reloadMethod: Function, // function to handle page reload.
+    },
+    data() {
+      return {
+        photoUrl: 'sorting-hat.png', // URL of the sorting hat.
+        answered: false, // Indicates if an answer has been selected.
+        inputText: '', // Text input value.
+      }
+    },
+    computed: {
+      // Computes a CSS class for the answer button based on input text length.
+      buttonClass() {
+        return this.inputText.length < 3 ? 'hover:bg-red-600' : 'hover:bg-blue-600';
+      }
+    },
+    methods: {
+      // Handles the click event on an answer option.
+      handleAnswerClick(item) {
+        if (this.answered) return;
+        this.answered = true;
+        this.answerClickMethod(item);
+      },
+    }
+  }
+</script>
+

@@ -1,5 +1,4 @@
 <template>
-  <!-- <nav class="bg-gray-800 h-20 w-full"> -->
     <div class="h-20 bg-gray-800 flex items-center justify-center">
       <div class="flex items-center">
         <div>
@@ -8,7 +7,6 @@
         <h1 class="text-white text-xs sm:text-3xl ">{{ title }}</h1>
       </div>
     </div>
-  <!-- </nav> -->
 </template>
 
   
@@ -17,9 +15,9 @@
   export default {
     data() {
       return {
-        title: "Hogwarts School of Witchcraft and Wizardry",
-        imagenLink: 'hogwarts.png', 
+        title: "Hogwarts School of Witchcraft and Wizardry", // Hogwarts full name
+        imagenLink: 'hogwarts.png',  // Hogwarts logo
       };
     },
   };
-  </script>
+</script>
