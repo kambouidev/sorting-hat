@@ -2,6 +2,8 @@
 
 Welcome to the Sorting Hat Quiz App, a magical web application to sort students into Hogwarts houses based on their personality traits and preferences. 🏰✨
 
+You can try the application [here](https://main--meek-palmier-ee1637.netlify.app/) 🧙‍♂️
+
 ## Table of Contents 📜
 - [Introduction](#introduction)
 - [Presentation](#presentation)
