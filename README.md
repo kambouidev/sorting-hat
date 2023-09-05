@@ -32,6 +32,8 @@ This project is built using [Nuxt 3](https://v3.nuxtjs.org/), one of the most in
 
 To get started with the Sorting Hat Quiz App project, follow these steps:
 
+**This project was made with node v18.13.0**
+
 1. Clone this repository to your local machine 🖥️
 
 ```bash
