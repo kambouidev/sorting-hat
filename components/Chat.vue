@@ -118,7 +118,7 @@
           this.hogwartsHouse = this.calculateWinningHouse();
           id = this.generateUniqueKey();
           newQuestion = {
-              title: finalMessage(),
+              title: this.finalMessage(),
               sender: false,
               answers: [],
               id,
